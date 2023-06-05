@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Create a script for converting all the .e00 files to shapefiles
+# After conversion the PAL hold the correct information
+# open converted files in MATLAB with dataname = m_shaperead('ICE/ICETHICKNESS/Data/Stage_of_development/e00_Data/Converted/name/PAL')
+
+# Two steps to get here: 
+# First convert from e00 to archive using: avcimport <input file.e00> <output dir name>
+# Next convert from archive to esri shapefile using: ogr2ogr -f "ESRI Shapefile" <output dir name> <input dir name>
+
+
+

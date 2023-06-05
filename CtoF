@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Convert from arcinfo to shapefile
+# run from within Convert1
+
+
+for file in *_C
+	do
+	ogr2ogr -f "ESRI Shapefile"  ../Convert2/${file:0:10}_F $file/
+done
+
