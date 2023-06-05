@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# test looping to convert e00 files to shapefiles
+# Make directories called Convert1 and Convert2 in directory with data files before running
+
+
+for file in *.e00
+	do
+	avcimport $file Convert1/${file:3:9}_C    # 0:10 should work for ross
+#	ogr2ogr -f "ESRI Shapefile" Convert2/${file:0:10}_F Convert1/${file:0:10}_C
+done
+
+ 

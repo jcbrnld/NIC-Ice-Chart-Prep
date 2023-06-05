@@ -6,6 +6,8 @@ These must be converted to shapefiles in order to use them.
 Unfortunately this is not easy, it can be done with arcGIS one file at a time. 
 There were however ~ 2000 files to convert so that was not an option. 
 
+~~~TWO EXAMPLES ARE PROVIDED AND RENAMED read_e00_Year and CtoF_year
+
 Open source software AVCE00 with program avcimport facillitates conversion of .e00 files to ArcInfo binary coverages
 Open source software GDAL with program ogr2ogr facillitates conversion of ArcInfo coverages to shapefiles
 
