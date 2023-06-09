@@ -1,0 +1,44 @@
+Jacob Arnold
+21-jul-2021
+
+#NIC Ice Charts:
+Sea ice charts for the years 2002-present from the national ice center are available to download from https://usicecenter.gov/Products/AntarcData 
+
+These charts contain polygons traced around areas with similar ice features. Each polygon includes information on UP TO 4 ice types (thickest, second thickeest… ect.). Charts are stored as shapefiles (.shp), a common arcGIS format which can easily be read into MATLAB (see Antarctic-Sea-Ice-Thickness repository for examples), Python, etc. 
+
+Sea ice charts for 10/1997-12/2001 are available from the National Ice Center upon request. 
+These are stored as .e00 files, an earlier arcGIS format which is not directly usable in most geospatial tools.  
+
+#Using .e00 files. 
+These must, therefore, be converted to shapefiles to use them outside arcGIS. 
+Unfortunately this is not easy, it can be done with arcGIS one file at a time. 
+However, for larger file batches this approach is impractical. 
+
+## ~~~TWO EXAMPLES ARE PROVIDED AND RENAMED read_e00_Year and CtoF_year ~~~
+
+Open source software AVCE00 with program avcimport facillitates conversion of .e00 files to ArcInfo binary coverages
+Open source software GDAL with program ogr2ogr facillitates conversion of ArcInfo binary coverages to shapefiles
+
+simply loop through all files and run 
+```console
+avcimport <filename.e00> <outdirectory name>  
+```
+next loop throgh the newly generated coverage directories running 
+```console
+ogr2ogr -f "ESRI Shapefile" <out shapefile dir name> <in coverage dir name>
+```
+
+executable files read_e00 (in each year's directory) and CtoF (in year/Convert1) do this. 
+
+Note 1997-2000 the data are divided into 6 regions
+     2001-2002 the data are hemispheric so they are named differently and the read_e00 and CtoF programs are altered accordingly
+
+final output data is to be found in year/Convert2
+
+
+*******THE PAL series of shapefiles data seem to be the correct ones, the others house less/incomplete polygon information.*********
+
+
+converted data can be read in matalb with data = m_shaperead('filename_withNOextension')
+ 
+
