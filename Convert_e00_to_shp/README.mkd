@@ -24,7 +24,7 @@ simply loop through all files and run
 avcimport <filename.e00> <outdirectory name>  
 ```
 next loop throgh the newly generated coverage directories running 
-```console
+```shell
 ogr2ogr -f "ESRI Shapefile" <out shapefile dir name> <in coverage dir name>
 ```
 
